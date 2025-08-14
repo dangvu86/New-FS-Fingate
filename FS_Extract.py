@@ -83,10 +83,10 @@ def extract_tables_from_html(html_content):
     soup = BeautifulSoup(html_content, "html.parser")
     tables = soup.find_all("table")
     if tables:
-        # Method 1: Try pandas read_html with different parsers
-        for parser in ['lxml', 'html5lib', 'html.parser']:
+        # Method 1: Try pandas read_html with available parsers
+        for parser in ['html.parser']:
             try:
-                df = pd.read_html(StringIO(str(tables[0])), flavor=parser)[0]
+                df = pd.read_html(StringIO(str(tables[0])))[0]
                 if isinstance(df.columns, pd.MultiIndex):
                     df.columns = [' '.join(map(str, col)).strip() for col in df.columns]
                 
