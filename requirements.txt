@@ -1,6 +1,5 @@
-# Dependencies for Streamlit Cloud deployment
-streamlit==1.28.1
-pandas==2.0.3
-beautifulsoup4==4.12.2
-gdown==4.7.1
-requests==2.31.0
+streamlit
+pandas
+beautifulsoup4
+gdown
+requests
